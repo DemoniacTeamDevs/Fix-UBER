@@ -1,0 +1,16 @@
+Descomprime las sources de uber en rebuilts/gcc/linux-x86/arm y ponle el nombre de arm-linux-androideabi-5.x
+
+Luego ve a build/core/combo/TARGET_linux_arm.mk
+
+Busca la linea $(combo_2nd_arch_prefix)TARGET_GCC_VERSION := 4.8
+Cambia el 4.8 por 5.x
+
+Busca la linea $(combo_2nd_arch_prefix)TARGET_TOOLS_PREFIX := $($(combo_2nd_arch_prefix)TARGET_TOOLCHAIN_ROOT)/bin/arm-linux-androideabi-
+Cambia el arm-linux-androideabi- por arm-eabi-
+
+>>Edita el boardconfig añadiendo 
+
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := $(PWD)/prebuilts/gcc/linux-x86/arm/arm-eabi-5.x/bin/arm-eabi-
+
+en la configuracion del kernel
+
