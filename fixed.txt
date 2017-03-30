@@ -1,0 +1,1 @@
+sudo apt-get install python python3 subversion openjdk-7-jdk wget tar unzip gcc g++
